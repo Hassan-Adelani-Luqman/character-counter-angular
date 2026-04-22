@@ -1,0 +1,30 @@
+<div class="cards-grid">
+  <div class="card card-purple" aria-live="polite" aria-label="Total characters: {{ charCount }}">
+    <div class="card-content">
+      <span class="card-number">{{ pad(charCount) }}</span>
+      <span class="card-label">
+        Total Characters
+        @if (excludeSpaces) {
+          <span class="no-space-tag">(no space)</span>
+        }
+      </span>
+    </div>
+    <img src="/assets/shapes/shape-purple.svg" class="card-shape" aria-hidden="true" alt="" />
+  </div>
+
+  <div class="card card-yellow" aria-live="polite" aria-label="Word count: {{ wordCount }}">
+    <div class="card-content">
+      <span class="card-number">{{ pad(wordCount) }}</span>
+      <span class="card-label">Word Count</span>
+    </div>
+    <img src="/assets/shapes/shape-yellow.svg" class="card-shape" aria-hidden="true" alt="" />
+  </div>
+
+  <div class="card card-coral" aria-live="polite" aria-label="Sentence count: {{ sentenceCount }}">
+    <div class="card-content">
+      <span class="card-number">{{ pad(sentenceCount) }}</span>
+      <span class="card-label">Sentence Count</span>
+    </div>
+    <img src="/assets/shapes/shape-coral.svg" class="card-shape" aria-hidden="true" alt="" />
+  </div>
+</div>

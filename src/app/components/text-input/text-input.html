@@ -1,0 +1,11 @@
+<div class="textarea-wrapper">
+  <textarea
+    class="text-area"
+    [class.over-limit]="isOverLimit"
+    [value]="text"
+    (input)="onInput($event)"
+    placeholder="Start typing here... (or paste your text)"
+    aria-label="Text input area"
+    spellcheck="false"
+  ></textarea>
+</div>

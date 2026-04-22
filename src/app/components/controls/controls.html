@@ -1,0 +1,74 @@
+<div class="controls-wrapper">
+  @if (isOverLimit) {
+    <div class="warning-message" role="alert">
+      <img src="/assets/icons/info-circle.svg" class="warning-icon" aria-hidden="true" alt="" />
+      <span>Limit reached! Your text exceeds {{ characterLimit }} characters.</span>
+    </div>
+  }
+
+  <div class="controls-row">
+    <div class="controls-left">
+
+      <!-- Exclude Spaces checkbox -->
+      <label class="checkbox-label"
+        (mouseenter)="excludeSpacesHovered = true"
+        (mouseleave)="excludeSpacesHovered = false"
+      >
+        <input
+          type="checkbox"
+          class="sr-only"
+          [checked]="excludeSpaces"
+          (change)="onExcludeSpacesChange($event)"
+          (focus)="excludeSpacesFocused = true"
+          (blur)="excludeSpacesFocused = false"
+          aria-label="Exclude spaces from character count"
+        />
+        <img
+          [src]="getCheckboxSrc(excludeSpaces, excludeSpacesHovered, excludeSpacesFocused)"
+          class="checkbox-img"
+          aria-hidden="true"
+          alt=""
+        />
+        <span class="checkbox-text">Exclude Spaces</span>
+      </label>
+
+      <!-- Set Character Limit checkbox -->
+      <label class="checkbox-label"
+        (mouseenter)="charLimitHovered = true"
+        (mouseleave)="charLimitHovered = false"
+      >
+        <input
+          type="checkbox"
+          class="sr-only"
+          [checked]="hasCharLimit"
+          (change)="onHasCharLimitChange($event)"
+          (focus)="charLimitFocused = true"
+          (blur)="charLimitFocused = false"
+          aria-label="Set a character limit"
+        />
+        <img
+          [src]="getCheckboxSrc(hasCharLimit, charLimitHovered, charLimitFocused)"
+          class="checkbox-img"
+          aria-hidden="true"
+          alt=""
+        />
+        <span class="checkbox-text">Set Character Limit</span>
+      </label>
+
+      @if (hasCharLimit) {
+        <input
+          type="number"
+          class="limit-input"
+          [value]="characterLimit"
+          (input)="onCharacterLimitInput($event)"
+          min="1"
+          aria-label="Character limit value"
+        />
+      }
+    </div>
+
+    <div class="reading-time" aria-live="polite">
+      Approx. reading time: {{ readingTime }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<header class="header">
+  <div class="header-inner">
+    <div class="header-logo">
+      <img
+        [src]="isDarkTheme ? '/assets/logos/logo-dark.svg' : '/assets/logos/logo-light.svg'"
+        alt="Character Counter logo"
+        class="logo-img"
+      />
+    </div>
+
+    <button
+      class="theme-btn"
+      (click)="onToggleTheme()"
+      [attr.aria-label]="isDarkTheme ? 'Switch to light mode' : 'Switch to dark mode'"
+    >
+      <img
+        [src]="isDarkTheme ? '/assets/icons/dark-mode-icon.svg' : '/assets/icons/light-mode-icon.svg'"
+        class="theme-icon"
+        aria-hidden="true"
+        alt=""
+      />
+    </button>
+  </div>
+</header>

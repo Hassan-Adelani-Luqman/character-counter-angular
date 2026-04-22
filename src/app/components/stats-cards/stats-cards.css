@@ -1,0 +1,85 @@
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  position: relative;
+  border-radius: 16px;
+  padding: 0 28px 24px;
+  overflow: hidden;
+  min-height: 130px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.card-number {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--card-text);
+  letter-spacing: -0.02em;
+}
+
+.card-label {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--card-text);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.no-space-tag {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+/* Decorative shape image — positioned right side, vertically centered */
+.card-shape {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 90%;
+  width: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+.card-purple {
+  background-color: var(--card-purple-bg);
+}
+
+.card-yellow {
+  background-color: var(--card-yellow-bg);
+}
+
+.card-coral {
+  background-color: var(--card-coral-bg);
+}
+
+@media (max-width: 640px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 110px;
+    padding: 0 24px 20px;
+  }
+
+  .card-number {
+    font-size: 2.5rem;
+  }
+}

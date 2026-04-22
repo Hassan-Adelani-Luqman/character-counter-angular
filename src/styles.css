@@ -1,3 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Dark theme (default) ─────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg-primary:   #12131A;   /* Neutral 900 */
+  --bg-secondary: #21222C;   /* Neutral 800 */
+
+  /* Text */
+  --text-primary:   #FFFFFF;              /* Neutral 0 */
+  --text-secondary: rgba(255,255,255,0.5);
+
+  /* Surfaces */
+  --textarea-bg:   #21222C;   /* Neutral 800 */
+  --bar-track:     #2A2B37;   /* Neutral 700 */
+  --theme-btn-bg:  #2A2B37;   /* Neutral 700 */
+  --header-border: #21222C;   /* Neutral 800 */
+
+  /* Checkbox */
+  --checkbox-border:     #404254;   /* Neutral 600 */
+  --checkbox-checked-bg: #C27CF8;   /* Blue 500 */
+  --checkbox-check:      #FFFFFF;
+
+  /* Interactive / state */
+  --focus-border:   #C27CF8;   /* Blue 500 */
+  --limit-border:   #DA3701;   /* Orange 800 */
+  --warning-color:  #DA3701;   /* Orange 800 */
+
+  /* Stat cards */
+  --card-purple-bg: #D3A0FA;   /* Blue 400 */
+  --card-yellow-bg: #FF9F00;   /* Yellow 500 */
+  --card-coral-bg:  #FE8159;   /* Orange 500 */
+  --card-text:      #12131A;   /* Neutral 900 */
+
+  /* Letter density bars */
+  --bar-fill: #D3A0FA;   /* Blue 400 */
+}
+
+/* ─── Light theme ───────────────────────────────────────────── */
+html.light {
+  /* Backgrounds */
+  --bg-primary:   #F2F2F7;   /* Neutral 100 */
+  --bg-secondary: #FFFFFF;   /* Neutral 0 */
+
+  /* Text */
+  --text-primary:   #12131A;   /* Neutral 900 */
+  --text-secondary: #404254;   /* Neutral 600 */
+
+  /* Surfaces */
+  --textarea-bg:   #E4E4EF;   /* Neutral 200 */
+  --bar-track:     #E4E4EF;   /* Neutral 200 */
+  --theme-btn-bg:  #E4E4EF;   /* Neutral 200 */
+  --header-border: #E4E4EF;   /* Neutral 200 */
+
+  /* Checkbox */
+  --checkbox-border: #404254;   /* Neutral 600 */
+}
+
+/* ─── Base ──────────────────────────────────────────────────── */
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
